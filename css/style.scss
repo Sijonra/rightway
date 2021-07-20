@@ -1,0 +1,700 @@
+// === Imports ===
+
+@import 'normalize.scss';
+
+// === /Imports ===
+
+
+// === Mixins ===
+
+@mixin list-style-none {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+@mixin font-roboto {
+    font-family: 'Roboto', sans-serif;
+}
+
+@mixin font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+@mixin font-libre-franklin {
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+// === /Mixins ===
+
+// === Variables ===
+
+$default: 3.5px;
+
+// === /Variables ===
+
+
+// === Common ===
+
+*{
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    @include font-montserrat;
+}
+
+.ta-c{
+    text-align: center;
+}
+
+.section-inner{
+    max-width: $default * 300;
+    margin: 0 auto;
+}
+
+.title-primary{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: $default * 7;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+// === /Common ===
+
+// === Hedaer ===
+
+.section-header{
+    padding: $default * 4 0;
+    .section-inner{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.header-logo-wrapper{
+    width: 120px;
+}
+.header__logo{
+    font-weight: normal;
+    font-size: $default * 8;
+    color: #000000;
+}
+
+.header-links{
+    @include list-style-none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &-item{
+        cursor: pointer;
+        &+&{
+            margin-left: $default * 10;
+        }
+    }
+    &__link{
+        font-weight: normal;
+        font-size: $default * 5;
+        color: #000000;
+        &:hover, &:active, &:focus{
+            color: #919191;
+        }
+    }
+}
+
+.header-button-primary{
+    padding: $default * 4;
+    background: rgba(64, 101, 99, 0.95);
+    border-radius: 20px;
+    border: none;
+    font-weight: normal;
+    font-size: $default * 5;
+    color: #FFFFFF;
+    transition: .2s;
+    cursor: pointer;
+    &:hover, &:active, &:focus{
+        background: rgba(41, 66, 65, 0.95);
+    }
+}
+
+// === /Header ===
+
+// === Positions ===
+
+.section-positions{
+    padding: $default * 8 0 $default * 20;
+    background: url(../img/positions-bg.jpg) no-repeat center;
+    background-size: cover;
+    background-color: rgba(#406563, $alpha: 1.0);
+}
+
+.positions-image{
+    margin: 0 auto;
+    margin-top: $default * 10;
+    margin-bottom: $default * 40;
+    width: $default * 150;
+    height: $default * 40;
+    svg{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.positions-slider{
+    @include font-roboto();
+    max-width: 1800px;
+    margin: 0 auto;
+    &-item{
+        transition: .4s;
+        &:hover, &:focus, &:active{
+            transform: scale(1.05);
+        }
+        background: url(../img/positions-card-bg.jpg) no-repeat center;
+        background-size: cover;
+        background-color: rgba(#c4d1d0, $alpha: 1.0);
+        padding: 24px;
+        margin-right: $default * 20;
+        max-width: $default * 165;
+        min-height: $default * 135;
+        &__title{
+            font-size: $default * 5;
+            font-weight: 600;
+            margin-bottom: $default * 2;
+        }
+        &__title-primary{
+            font-size: $default * 4;
+            font-weight: 600;
+        }
+        &__text-primary{
+            font-style: normal;
+            font-weight: 500;
+            font-size: $default * 4;
+            color: #000000;
+        }
+    }
+}
+
+// === /Positions ===
+
+// === Promo ===
+
+.section-promo{
+    padding: $default * 20 0;
+}
+
+.promo-cards{
+    max-width: $default * 250;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.promo-card{
+    display: flex;
+    flex-direction: column;
+    &__img{
+        align-self: center;
+        margin-bottom: $default * 8;
+    }
+    &__desc{
+        font-weight: 600;
+        font-size: $default * 5;
+        color: #000000;
+    }
+    max-width: $default * 50;
+}
+
+// === /Promo ===
+
+// === About us ===
+
+.section-about-us{
+    padding: $default * 15 0 $default * 20;
+    background: url(../img/about-us-bg.jpg) no-repeat center;
+    background-size: cover;
+    background-color: rgba(#406563, $alpha: 1.0);
+}
+
+.section-about-text{
+    font-weight: 400;
+    font-size: $default * 8;
+    line-height: $default * 12;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+// === /About us ===
+
+// === Reviews ===
+
+.section-reviews{
+    padding: $default * 20 0;
+    .section-inner{
+        max-width: $default * 450;
+        .title-primary{
+            color: black;
+            margin-bottom: $default * 12;
+        }
+    }
+}
+
+.reviews-cards{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.reviews-card{
+    margin-right: $default * 10;
+    padding: $default * 14 0;
+    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
+    border: 2px solid #406563;
+    box-sizing: border-box;
+    border-radius: 20px;
+    max-width: $default * 110;
+    height: $default * 75;
+    &__content{
+        @include font-roboto();
+        padding: 0 $default * 8;
+        font-size: $default * 4;
+        line-height: 150%;
+        color: #464646;
+    }
+    &__author{
+        @include font-roboto();
+        padding: 0 $default * 8;
+        font-style: normal;
+        font-weight: 500;
+        font-size: $default * 4;
+        line-height: $default * 5;
+        color: #151517;
+    }
+    &__author-position{
+        @include font-libre-franklin();
+        padding: 0 $default * 8;
+        font-weight: normal;
+        font-size: $default * 3;
+        color: #676767;
+    }
+    margin-bottom: $default * 12;
+}
+
+
+
+// === /Reviews ===
+
+// === Photo ===
+
+.section-photo{
+    padding: $default * 14 0;
+    .title-primary{
+        color: black;
+        margin-bottom: $default * 16;
+    }
+    .section-inner{
+        max-width: $default * 450;
+    }
+}
+
+
+.photo-slider{
+    &__item{      
+        margin-bottom: $default * 16;
+        max-width: 500px !important;
+        height: 300px !important;
+        img{
+            width: 100%;
+            height: 100%;
+            transition: .4s;
+            &:hover, &:focus, &:active{
+                transform: scale(1.05);
+            }
+        }
+        margin-right: $default * 12;
+    }
+}
+
+// === /Photo ===
+
+// === Footer ===
+
+.section-footer{
+    padding: $default * 15 0;
+    background: url(../img/footer-bg.jpg) no-repeat center;
+    background-size: cover;
+    background-color: rgba(#406563, $alpha: 1.0);
+    .section-inner{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.footer-left{
+    .footer-call{
+        font-style: normal;
+        font-weight: bold;
+        font-size: $default * 10;
+        line-height: 59px;
+        color: #FFFFFF;
+    }
+    .footer-number-group{
+        display: flex;
+        align-items: center;
+        .footer-number{
+            font-style: normal;
+            font-weight: bold;
+            font-size: $default * 10;
+            color: #FFFFFF;
+        }
+    }
+    .footer-name{
+        margin: 0;
+        font-style: normal;
+        font-weight: bold;
+        font-size: $default * 10;
+        color: #FFFFFF;
+    }
+}
+.footer-right{
+    &__title{
+        font-style: normal;
+        font-weight: bold;
+        font-size: $default * 10;
+        color: #FFFFFF;
+    }
+    &-towns{
+        @include list-style-none();
+        &__item{
+            text-align: center;
+            font-size: $default * 6;
+            color: #FFFFFF;
+        }
+    }
+}
+
+
+// === /Footer ===
+
+// === Media ===
+
+@media(max-width: 1300px){
+    .section-inner{
+        max-width: $default * 250;
+    }
+    .promo-card__img{
+        svg{
+            width: $default * 25;
+            height: $default * 25;
+        }
+    }
+    .section-footer .section-inner{
+        justify-content: space-around;
+    }
+}
+
+
+@media (max-width:768px){
+    
+    .positions-image{
+        width: $default * 100;
+        height: $default * 25;
+        margin-bottom: $default * 25;
+    }
+    .section-inner{
+        max-width: $default * 200;
+    }
+    .section-header{
+        .section-inner{
+            display: block;
+            text-align: center;
+            .header-links{
+                padding-bottom: $default * 6;
+                justify-content: center;
+                &__link{
+                    font-size: $default * 5;
+                }
+            }
+            .header-logo-wrapper{
+                padding-bottom: $default * 6;
+                margin: 0 auto;
+            }
+        }
+        .header__logo{
+            font-size: $default * 6;
+        }
+    }
+    .title-primary{
+        font-size: $default * 5 ;
+    }
+    .section-about-us{
+        padding: $default * 13 0;
+        h1{
+            font-weight: 400;
+            font-size: $default * 6;
+            line-height: $default * 8;
+            text-align: center;
+        }
+        p{
+            font-weight: 400;
+            font-size: $default * 5;
+            line-height: $default * 8;
+            text-align: center;
+        }
+    }
+    .section-footer{
+        .section-inner{
+            justify-content: space-around;
+        }
+    }
+    .footer-left{
+        padding-left: $default * 6;
+        .footer-call{
+            font-size: $default * 8;
+        }
+        .footer-number-group{
+            .footer-number{
+                font-size: $default * 6;
+            }
+            img{
+                width: $default * 10;
+                height: $default * 10;
+            }
+        }        
+        .footer-name{
+            font-size: $default * 6;
+        }
+    }
+    .footer-right{
+        padding-right: $default * 6;
+        &__title{
+            font-size: $default * 8;
+        }
+    }
+    .promo-card__img{
+        svg{
+            width: $default * 20;
+            height: $default * 20;
+        }
+    }
+    .promo-card__desc{
+        font-size: $default * 4;
+    }
+    .section-reviews{
+        padding: $default * 13 0;
+    }
+}
+
+@media (max-width: 500px){
+    .section-photo{
+        padding: $default * 8 0;
+    }
+    .section-footer{
+        padding: $default * 8 0;
+    }
+    .title-primary{
+        margin-bottom: $default * 8;
+    }
+    .section-photo .title-primary{
+        margin-bottom: $default * 8;
+    }
+    .photo-slider__item{
+        height: 150px !important;
+    }
+    .positions-slider-item{
+        padding: $default * 4;
+    }
+    .positions-slider-item{
+        margin-right: $default * 5;
+    }
+    .section-inner{
+        max-width: $default * 100;
+    }
+    .reviews-card{
+        padding: $default * 6;
+    }
+    .reviews-card__content{
+        font-size: $default * 3;
+    }
+}
+
+@media (max-width: 414px){
+    .positions-slider-item{
+        margin-right: $default * 3;
+        li{
+            font-size: $default * 3;
+        }
+        min-height: 0;
+    }
+    .positions-slider-item__list-primary{
+        @include list-style-none();
+    }
+    .positions-slider-item__title{
+        font-size: $default * 4;
+    }
+    .positions-slider-item__title-primary{
+        font-size: $default * 3.5;
+    }
+    .positions-slider-item{
+        margin-right: $default * 4;
+    }
+    .section-header{
+        .header-links{
+            display: block;
+            justify-content: center;
+            margin-left: 0;
+            padding-bottom: $default * 10;
+            &-item{
+                margin-left: 0;
+                padding-bottom: $default * 2;
+            }
+        }
+    }
+    .positions-image{
+        max-width: $default * 90;
+    }
+    .section-promo{
+        .promo-cards{
+            display: block;
+            justify-content: center;
+        }
+        .promo-card{
+            padding-bottom: $default * 4;
+            max-width: 300px;
+            margin:  0 auto;
+        }
+    }
+    .footer-left{
+        padding-left: $default * 6;
+        .footer-call{
+            font-size: $default * 5;
+        }
+        .footer-name{
+            font-size: $default * 5;  
+        }
+        .footer-number-group{
+            .footer-number{
+                font-size: $default * 5; 
+            }
+            .footer-image{
+                display: none;
+            }
+        }
+    } 
+    .footer-right{
+        padding-right: $default * 6;
+        h2{
+            font-size: $default * 5;
+        }
+        &-towns{
+            font-size: $default * 5;
+        }
+    }
+    .reviews-card__content{
+        padding: 0;
+    }
+    .reviews-card__author{
+        padding: 0;
+        &-position{
+            padding: 0;
+        }
+    }
+    .section-reviews{
+        padding: $default * 8 0;
+    }
+    .positions-image{
+        max-width: $default * 60;
+        margin: $default * 8;
+    }
+}
+
+@media (max-width:375px) {
+    .section-inner{
+        max-width: $default * 300;
+        margin: 0 auto;
+    }
+    .section-header{
+        .header-links{
+            display: block;
+            justify-content: center;
+            margin-left: 0;
+            padding-bottom: $default * 10;
+            &-item{
+                margin-left: 0;
+                padding-bottom: $default * 2;
+            }
+        }
+    }
+    .section-promo{
+        .promo-cards{
+            display: block;
+            justify-content: center;
+        }
+        .promo-card{
+            padding-bottom: $default * 4;
+            max-width: 300px;
+            margin:  0 auto;
+        }
+    }
+    .footer-left{
+        padding-left: $default * 6;
+        .footer-call{
+            font-size: $default * 5;
+        }
+        .footer-name{
+            font-size: $default * 5;  
+        }
+        .footer-number-group{
+            .footer-number{
+                font-size: $default * 5; 
+            }
+            .footer-image{
+                display: none;
+            }
+        }
+    }
+    
+    .footer-right{
+        padding-right: $default * 6;
+        h2{
+            font-size: $default * 5;
+        }
+        &-towns{
+            font-size: $default * 5;
+        }
+    }
+    .positions-slider-item__list-primary{
+        @include list-style-none();
+    }
+    .positions-slider-item__title{
+        font-size: $default * 3;
+    }
+    .positions-slider-item__title-primary{
+        font-size: $default * 2.5;
+    }
+}
+
+@media (max-width: 320px){
+    .footer-left{
+        .footer-call{
+            line-height: $default * 6;
+        }
+        
+    }
+}
+
+
+
+// === /Media ===
