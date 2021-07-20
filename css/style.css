@@ -957,7 +957,7 @@ body {
 
   .positions-image {
     max-width: 210px;
-    margin: 28px;
+    margin: 28px auto;
   }
 }
 @media (max-width: 375px) {
